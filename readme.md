@@ -2,251 +2,90 @@
 
 
 
-````markdown
+# QCFPDataSet: Automated Functional and Quantum-Native Software Measurement at Scale
 
-\# QCFPDataSet: Automated Functional and Quantum-Native Software Measurement at Scale
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+### Overview
 
-
-!\[License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-
-
-
----
-
-
-
-\## Overview
-
-
-
-\*\*QCFPDataSet\*\* is the first large-scale, open-access dataset that combines classical functional size measurement (COSMIC function points) with quantum-native metrics (gate count, circuit width, qubit connectivity) for real-world Qiskit programs. This project advances research in quantum software engineering, benchmarking, and machine learning. The dataset and tools are provided for free to support academic and industrial research, education, and open science.
-
-
+QCFPDataSet is an open-access dataset that combines classical functional size measurement (COSMIC function points) with quantum-native metrics (gate count, circuit width, qubit connectivity) for real-world Qiskit programs. It supports research in quantum software engineering, benchmarking, and machine learning.
 
 This repository includes:
+- Final dataset in `.csv` format
+- Source programs in `python-sources/`
 
-\- The complete dataset in `.csv` format
+### Features
 
-\- Python scripts for automated measurement and analysis
+- Hundreds of real Qiskit programs from open-source repositories
+- Multi-metric annotations for each file:
+  - COSMIC function points (CFP)
+  - Lines of Code (LOC)
+  - Gate count
+  - Circuit width
+  - Qubit connectivity
+- Open data format (CSV)
+- Permissive MIT license
 
-\- Example Jupyter notebooks and documentation
+### Dataset structure
 
+Columns in `Final_Dataset.csv`:
+- File Name
+- Events
+- Total Entries
+- Total Exits
+- Total Writes
+- Total Reads
+- Total CFP
+- LOC
+- Gate Count
+- Circuit Width
+- Qubit Connectivity
 
-
----
-
-
-
-\## Features
-
-
-
-\- \*\*1,000+ real Qiskit programs\*\* from open-source GitHub repositories
-
-\- \*\*Multi-metric annotations\*\* for each file:
-
-&nbsp;   - COSMIC function points (CFP)
-
-&nbsp;   - Lines of Code (LOC)
-
-&nbsp;   - Gate count
-
-&nbsp;   - Circuit width
-
-&nbsp;   - Qubit connectivity
-
-\- \*\*Automated, reproducible measurement pipeline\*\* for static analysis
-
-\- \*\*Open data formats\*\* (CSV, JSON)
-
-\- \*\*Permissive MIT license\*\*
-
-
-
----
-
-
-
-\## Dataset Structure
-
-
-
-Each dataset entry includes:
-
-\- \*\*Filename and repository information\*\*
-
-\- \*\*Classical metrics\*\*: COSMIC Function Points, LOC
-
-\- \*\*Quantum-native metrics\*\*: Gate count, circuit width, qubit connectivity
-
-\- \*\*COSMIC breakdown\*\*: Entries (E), Exits (X), Reads (R), Writes (W)
-
-\- \*\*Metadata and quality control flags\*\*
-
-
-
-
-
----
-
-
-
-\## How to Use
-
-
-
-1\. \*\*Download the dataset\*\* from the repository.
-
-2\. \*\*Cite this dataset\*\* if you use it in your work (see below).
-
-
-
----
-
-
-
-\## Getting Started
-
-
+### Quick start
 
 ```bash
-
 git clone https://github.com/arefabacworkshop/QCFPDataSet.git
-
 cd QCFPDataSet
-
-pip install -r requirements.txt
-
-\# Example: run analysis pipeline
-
-python pipeline/analyze\_qcfp\_dataset.py
-
-````
-
-
-
----
-
-
-
-\## Contributing
-
-
-
-We welcome contributions and feedback!
-
-To suggest changes, please open an \[issue](https://github.com/arefabacworkshop/QCFPDataSet/issues) or submit a \[pull request](https://github.com/arefabacworkshop/QCFPDataSet/pulls).
-
-
-
----
-
-
-
-\## Citing QCFPDataSet
-
-
-
-If you use this dataset in your research, \*\*please cite\*\*:
-
-
-
 ```
 
+```python
+import pandas as pd
+df = pd.read_csv("Final_Dataset.csv")
+df.head()
+```
+
+### Contributing
+
+We welcome contributions and feedback. Please open an [issue](https://github.com/arefabacworkshop/QCFPDataSet/issues) or submit a [pull request](https://github.com/arefabacworkshop/QCFPDataSet/pulls).
+
+### Citation
+
+If you use this dataset in your research, please cite:
+
+```
 @article{abbasi2026qcfpdataset,
-
-&nbsp; title={QCFPDataSet: Automated Functional and Quantum-Native Software Measurement at Scale},
-
-&nbsp; author={Aref Abbasi and Esmaeil KheirKhah},
-
-&nbsp; journal={Preprint},
-
-&nbsp; year={2026},
-
-&nbsp; url={https://github.com/arefabacworkshop/QCFPDataSet}
-
+  title={QCFPDataSet: Automated Functional and Quantum-Native Software Measurement at Scale},
+  author={Abbasi, Aref and KheirKhah, Esmaeil},
+  journal={Preprint},
+  year={2026},
+  url={https://github.com/arefabacworkshop/QCFPDataSet}
 }
-
 ```
 
+Alternative:
 
+Abbasi, A., & KheirKhah, E. (2026). QCFPDataSet: Automated Functional and Quantum-Native Software Measurement at Scale. https://github.com/arefabacworkshop/QCFPDataSet
 
-Or:
+### License
 
+MIT License. See the badge link above for details.
 
+### Authors and acknowledgments
 
-> Abbasi, A., \& KheirKhah, E. (2026). QCFPDataSet: Automated Functional and Quantum-Native Software Measurement at Scale. \[https://github.com/arefabacworkshop/QCFPDataSet](https://github.com/arefabacworkshop/QCFPDataSet)
+- Lead author: Aref Abbasi
+- Supervisor and collaborator: Esmaeil KheirKhah
+- Thanks to the open-source Qiskit community and all contributors
 
+### Contact
 
-
----
-
-
-
-\## License
-
-
-
-This project is licensed under the \[MIT License](LICENSE).
-
-
-
----
-
-
-
-\## Authors \& Acknowledgments
-
-
-
-\*\*Lead Author:\*\*
-
-Aref Abbasi (\[GitHub](https://github.com/yourusername))
-
-
-
-\* Concept, implementation, data collection, analysis, and manuscript writing
-
-
-
-\*\*Supervisor and Collaborator:\*\*
-
-Esmaeil KheirKhah (\[GitHub](https://github.com/theirusername))
-
-
-
-\* Research supervision, project guidance, manuscript review
-
-
-
-Special thanks to the open-source Qiskit community and all contributors.
-
-
-
----
-
-
-
-\*\*Contact:\*\*
-
-For questions or collaboration, please open an issue or email Aref Abbasi at \[your.email@example.com](mailto:aref\_abbasi@hotmail.com).
-
-
-
----
-
-
-
-\*\*Enjoy exploring QCFPDataSet and please remember to cite our work if you use it!\*\*
-
-
-
-```
-
-
-
----
-
-
-
+For questions or collaboration, please open an issue or email Aref Abbasi at aref_abbasi@hotmail.com.
